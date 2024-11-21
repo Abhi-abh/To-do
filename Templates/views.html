@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+<div class="container mt-auto mb-auto">
+<div class="card text-bg-danger mb-3 mt-5 fw-bold text-dark" style="max-width: 81rem;">
+    <div class="card-header bg-primary"><h2>{{ student.student_name }}</h2></div>
+    <div class="card-body">
+      <h5 class="card-title">ID: {{ student.id }}</h5>
+      <h5 class="card-title">EMAIL: {{ student.student_email }}</h5>
+      <h5 class="card-title">Age: {{ student.student_age }}</h5>
+      <h5 class="card-title">Class: {{ student.get_gender_display }}</h5>
+    </div>
+</div>
+{% endblock %}

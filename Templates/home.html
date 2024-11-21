@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+
+<div class="container mt-5">
+        <div class="">
+            <h3 class=" fw-bold p-2 text-center text-white bg-primary">Student Details</h3>
+            
+            <div class="container">
+                <table class="table table-striped fw-bold">
+                    <thead>
+                      <tr>
+                        <th scope="col">id</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Age</th>
+                        <th scope="col">Gender</th>
+                      </tr>
+                    </thead>
+                    {% for i in insert %}
+                
+                      <tr>
+                        <th scope="row">{{i.id}}</th>
+                        <td>{{i.student_name}}</td>
+                        <td>{{i.student_email}}</td>
+                        <td>{{i.student_age}}</td>
+                        <td>{{i.get_gender_display}}</td>
+                        <td><button class="bg-success"><a class="nav-link text-white" href="{% url 'view' i.id %}">View</a></button></td>
+                        <td><button class="bg-primary"><a class="nav-link text-white" href="{% url 'edit' i.id %}">Edit</a></button></td>
+                        <td><button class="bg-danger"><a class="nav-link text-white" href="{% url 'delete' i.id %}">Delete</a></button></td>
+                        
+                      </tr>
+                      {% endfor %}
+                  </table>
+
+
+    
+{% endblock %}
